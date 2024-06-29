@@ -1,86 +1,26 @@
-# Python project template
+# A visual exploration of vectors
 
-This is a template repository for any Python project that comes with the following dev tools:
+A vector embedding encodes an input as a list of floating point numbers.
 
-* `ruff`: identifies many errors and style issues (`flake8`, `isort`, `pyupgrade`)
-* `black`: auto-formats code
+"dog" → [0.017198, -0.007493, -0.057982, 0.054051, -0.028336, 0.019245,…]
 
-Those checks are run as pre-commit hooks using the `pre-commit` library.
+Different models output different embeddings, with varying lengths.
 
-It includes `pytest` for testing plus the `pytest-cov` plugin to measure coverage.
+| Model | Encodes | Vector length |
+| --- | --- | --- |
+| word2vec | words | 300 |
+| Sbert (Sentence-Transformers) | text (up to ~400 words) | 768 |
+| OpenAI ada-002 | text (up to 8191 tokens) | 1536 |
+| Azure Computer Vision | image or text | 1024 |
 
-The checks and tests are all run using Github actions on every pull request and merge to main.
+This repository contains a visual exploration of vectors, using several embedding models.
 
-This repository is setup for Python 3.11. To change the version:
-1. Change the `image` argument in `.devcontainer/devcontainer.json` (see [https://github.com/devcontainers/images/tree/main/src/python](https://github.com/devcontainers/images/tree/main/src/python#configuration) for a list of pre-built Docker images)
-1. Change the config options in `.precommit-config.yaml`
-1. Change the version number in `.github/workflows/python.yaml`
+Go through notebooks in this order:
 
-## Development instructions
-
-## With devcontainer
-
-This repository comes with a devcontainer (a Dockerized Python environment). If you open it in Codespaces, it should automatically initialize the devcontainer.
-
-Locally, you can open it in VS Code with the Dev Containers extension installed.
-
-## Without devcontainer
-
-If you can't or don't want to use the devcontainer, then you should first create a virtual environment:
-
-```
-python3 -m venv .venv
-source .venv/bin/activate
-```
-
-Then install the dev tools and pre-commit hooks:
-
-```
-python3 -m pip install --user -r requirements-dev.txt
-pre-commit install
-```
-
-## Adding code and tests
-
-This repository starts with a very simple `main.py` and a test for it at `tests/main_test.py`.
-You'll want to replace that with your own code, and you'll probably want to add additional files
-as your code grows in complexity.
-
-When you're ready to run tests, run:
-
-```
-python3 -m pytest
-```
-
-# File breakdown
-
-Here's a short explanation of each file/folder in this template:
-
-* `.devcontainer`: Folder containing files used for setting up a devcontainer
-  * `devcontainer.json`: File configuring the devcontainer, includes VS Code settings
-* `.github`: Folder for Github-specific files and folders
-  * `workflows`: Folder containing Github actions config files
-    * `python.yaml`: File configuring Github action that runs tools and tests
-* `tests`: Folder containing Python tests
-  * `main_test.py`: File with pytest-style tests of main.py
-* `.gitignore`: File describing what file patterns Git should never track
-* `.pre-commit-config.yaml`: File listing all the pre-commit hooks and args
-* `main.py`: The main (and currently only) Python file for the program
-* `pyproject.toml`: File configuring most of the Python dev tools
-* `README.md`: You're reading it!
-* `requirements-dev.txt`: File listing all PyPi packages required for development
-* `requirements.txt`: File listing all PyPi packages required for production
-
-For a longer explanation, read [this blog post](http://blog.pamelafox.org/2022/09/how-i-setup-python-project.html).
-
-# 🔎 Found an issue or have an idea for improvement?
-
-Help me make this template repository better by letting us know and opening an issue!
-
-
-https://blog.esciencecenter.nl/king-man-woman-king-9a7fd2935a85
-https://github.com/viniciusarruda/word2vec
-https://jalammar.github.io/illustrated-word2vec/
-https://vaibhavgarg1982.medium.com/why-are-cosine-similarities-of-text-embeddings-almost-always-positive-6bd31eaee4d5
-https://community.openai.com/t/expected-angular-differences-in-embedding-random-text/28577/5 (cone)
-https://gregorygundersen.com/blog/2018/06/26/dot-product/
+1. Prepare text vectors: [OpenAI ada-002](prep_openai_ada002.ipynb), [Word2Vec Google News](prep_word2vec_gnews.ipynb)
+2. [Vector models](compare_vector_models.ipynb)
+3. [Vector distance metrics](vector_distance.ipynb)
+4. [Multi-word vectors](movie_vectors.ipynb)
+5. [Vector quantization](vector_quantization.ipynb)
+6. [Prepare multimodal vectors](prep_multimodal.ipynb)
+7. [Explore multimodal vectors](multimodal_vectors.ipynb)
