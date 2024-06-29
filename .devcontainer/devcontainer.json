@@ -24,17 +24,14 @@
             "extensions": [
                 "ms-python.python",
                 "charliermarsh.ruff",
-                "ms-python.black-formatter"
+                "ms-python.black-formatter",
+                "ms-toolsai.jupyter"
             ]
         }
     },
 
     // Use 'forwardPorts' to make a list of ports inside the container available locally.
     // "forwardPorts": [],
-
-	// Use 'postCreateCommand' to run commands after the container is created.
-	// Fix for https://www.kenmuse.com/blog/avoiding-dubious-ownership-in-dev-containers/
-	"postCreateCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}",
 
 	// Use 'postStartCommand' to run commands after the container is started (more frequently than create).
 	"postStartCommand": "pip3 install --user -r requirements-dev.txt && pre-commit install",

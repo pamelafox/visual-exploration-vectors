@@ -76,3 +76,11 @@ For a longer explanation, read [this blog post](http://blog.pamelafox.org/2022/0
 # 🔎 Found an issue or have an idea for improvement?
 
 Help me make this template repository better by letting us know and opening an issue!
+
+
+https://blog.esciencecenter.nl/king-man-woman-king-9a7fd2935a85
+https://github.com/viniciusarruda/word2vec
+https://jalammar.github.io/illustrated-word2vec/
+https://vaibhavgarg1982.medium.com/why-are-cosine-similarities-of-text-embeddings-almost-always-positive-6bd31eaee4d5
+https://community.openai.com/t/expected-angular-differences-in-embedding-random-text/28577/5 (cone)
+https://gregorygundersen.com/blog/2018/06/26/dot-product/
