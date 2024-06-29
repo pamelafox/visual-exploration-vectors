@@ -13,6 +13,8 @@ Different models output different embeddings, with varying lengths.
 | OpenAI ada-002 | text (up to 8191 tokens) | 1536 |
 | Azure Computer Vision | image or text | 1024 |
 
+Vector embeddings are commonly used for similarity search, fraud detection, recommendation systems, and RAG (Retrieval-Augmented Generation).
+
 This repository contains a visual exploration of vectors, using several embedding models.
 
 Go through notebooks in this order:
