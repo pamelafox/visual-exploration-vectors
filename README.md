@@ -19,7 +19,7 @@ This repository contains a visual exploration of vectors, using several embeddin
 
 Go through notebooks in this order:
 
-1. Prepare text vectors: [OpenAI ada-002](prep_openai_ada002.ipynb), [Word2Vec Google News](prep_word2vec_gnews.ipynb)
+1. Prepare text vectors: [OpenAI Text Embeddings](prep_openai.ipynb), [Word2Vec Google News](prep_word2vec_gnews.ipynb)
 2. [Vector models](compare_vector_models.ipynb)
 3. [Vector distance metrics](vector_distance.ipynb)
 4. [Multi-word vectors](movie_vectors.ipynb)
